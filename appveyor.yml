@@ -57,4 +57,4 @@ install:
   - IF %dependencies%==highest composer update --prefer-dist --no-progress
 test_script:
   - ps: cd $Env:project_directory
-  - vendor\bin\phing
+  - vendor\bin\phing tests
