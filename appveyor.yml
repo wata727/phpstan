@@ -7,12 +7,6 @@ environment:
   matrix:
     - dependencies: lowest
       php_version: 7.1
-    - dependencies: highest
-      php_version: 7.1
-    - dependencies: lowest
-      php_version: 7.2
-    - dependencies: highest
-      php_version: 7.2
 
   project_directory: c:\projects\phpstan
   composer_directory: c:\tools\composer
@@ -46,6 +40,9 @@ install:
   - ps: Add-Content -Path php.ini -Value 'extension=php_curl.dll'
   - ps: Add-Content -Path php.ini -Value 'extension=php_mbstring.dll'
   - ps: Add-Content -Path php.ini -Value 'extension=php_openssl.dll'
+  - ps: Add-Content -Path php.ini -Value 'extension=php_soap.dll'
+  - ps: Add-Content -Path php.ini -Value 'extension=php_mysqli.dll'
+  - ps: Add-Content -Path php.ini -Value 'extension=php_intl.dll'
   - ps: php --version
 
   # Prepare composer
